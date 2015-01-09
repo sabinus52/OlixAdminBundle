@@ -1,0 +1,27 @@
+{
+    "name" : "olix/admin-bundle",
+    "description" : "Symfony OlixAdminBundle",
+    "type" : "symfony-bundle",
+    "homepage" : "https://github.com/sabinus52/OlixAdminBundle",
+    "license" : "GPL-2.0",
+    "authors" : [{
+            "name" : "Olivier",
+            "email" : "sabinus52@gmail.com"
+        }
+    ],
+    "keywords" : [
+        "olix",
+        "symfony",
+        "admin",
+        "back office",
+        "bootstrap"
+    ],
+    "require" : {
+        "symfony/http-foundation" : "~2.6"
+    },
+    "autoload" : {
+        "psr-4" : {
+            "Olix\\AdminBundle" : ""
+        }
+    }
+}
