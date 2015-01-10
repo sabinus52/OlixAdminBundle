@@ -1,0 +1,4 @@
+@CHARSET "UTF-8";
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:local('Open Sans'),local('OpenSans'),url(../fonts/open-sans-400.woff) format('woff');}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;src:local('Open Sans Semibold'),local('OpenSans-Semibold'),url(../fonts/open-sans-600.woff) format('woff');}
+

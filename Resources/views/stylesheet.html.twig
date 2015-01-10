@@ -1,0 +1,21 @@
+{% if app.environment == 'dev' %}
+
+{# Fonts #}
+<link href="{{ asset('bundles/olixadmin/css/font-opensans.css') }}" rel="stylesheet">
+<link href="{{ asset('public/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+{# Bootstrap core CSS #}
+<link href="{{ asset('public/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+{# OlixAdmin core CSS #}
+<link href="{{ asset('bundles/olixadmin/css/admin.css') }}" rel="stylesheet">
+
+{% else %}
+
+{# Fonts #}
+<link href="{{ asset('bundles/olixadmin/css/font-opensans.min.css') }}" rel="stylesheet">
+<link href="{{ asset('public/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+{# Bootstrap core CSS #}
+<link href="{{ asset('public/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+{# OlixAdmin core CSS #}
+<link href="{{ asset('bundles/olixadmin/css/admin.css') }}" rel="stylesheet">
+
+{% endif %}

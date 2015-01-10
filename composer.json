@@ -17,7 +17,10 @@
         "bootstrap"
     ],
     "require" : {
-        "symfony/http-foundation" : "~2.6"
+        "symfony/http-foundation" : "~2.6",
+        "robloach/component-installer": "~0.0",
+        "components/bootstrap": "3.2.*",
+        "components/font-awesome": "*"
     },
     "autoload" : {
         "psr-4" : {

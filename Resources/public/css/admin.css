@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+
+body {
+    background-color: #ececec;
+}
+
+
+/**
+ * Contenu principal de la page
+ */
+.olix-main {
+    padding: 10px;
+    background-color: #ececec;
+}
+
