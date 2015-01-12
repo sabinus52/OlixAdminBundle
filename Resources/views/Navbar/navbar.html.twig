@@ -1,0 +1,27 @@
+{% extends 'OlixAdminBundle:Navbar:navbar_base.html.twig' %}
+
+
+{% block olix_admin_navbar %}
+    {{ block('olix_admin_navbar_header') }}
+
+    <div class="navbar-collapse collapse">
+    </div>
+{% endblock olix_admin_navbar %}
+
+
+{% block olix_admin_navbar_header %}
+    <div class="navbar-header">
+        {{ block('olix_admin_navbar_brand') }}
+        {{ block('olix_admin_navbar_desc') }}
+    </div>
+{% endblock olix_admin_navbar_header %}
+
+{% block olix_admin_navbar_brand %}
+    <a class="navbar-brand" href="#">{% if logo is defined %}<img alt="" src="{{ asset(logo) }}"> {% endif %}{{ brand }}</a>
+{% endblock olix_admin_navbar_brand %}
+
+{% block olix_admin_navbar_desc %}
+    {% if description is defined %}
+    <p class="navbar-text hidden-xs hidden-sm">{{ description }}</p>
+    {% endif %}
+{% endblock olix_admin_navbar_desc %}

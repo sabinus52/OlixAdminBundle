@@ -9,7 +9,7 @@ class TestController extends Controller
 {
     /**
      * @Route("/test-dashboard", name="olix_admin_dashboard")
-    */
+     */
     public function indexAction()
     {
         return $this->render('OlixAdminBundle:Test:index.html.twig');
