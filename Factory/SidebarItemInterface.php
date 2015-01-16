@@ -78,7 +78,7 @@ interface SidebarItemInterface extends \ArrayAccess, \Countable, \IteratorAggreg
      * 
      * @return boolean
      */
-    public function isDeplayed();
+    public function isDisplayed();
 
 
     /**

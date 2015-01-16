@@ -166,7 +166,7 @@ class SidebarItem implements SidebarItemInterface
     /**
      * @return boolean
      */
-    public function isDeplayed()
+    public function isDisplayed()
     {
         return $this->display;
     }
