@@ -48,14 +48,41 @@ body {
  * Contenu principal de la page
  * Décalage vers la droite sauf sur mobile
  * Padding de 10px
+ * Pour chaque taille du média le padding est étendu ou pas en fonction de la sidebar
  */
 .olix-main {
     padding: 0px;
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px) {
+    .olix-main {
+        padding-left: 50px;
+        padding-right: 0px;
+        z-index: 100;
+        -webkit-transition: all .25s ease-out;
+           -moz-transition: all .25s ease-out;
+                transition: all .25s ease-out;
+    }
+    .olix-sidebar-long .olix-main {
+        padding-left: 200px;
+        -webkit-transition: all .25s ease-out;
+           -moz-transition: all .25s ease-out;
+                transition: all .25s ease-out;
+    }
+
+}
+@media (min-width: 992px) {
     .olix-main {
         padding-left: 200px;
         padding-right: 0px;
+        -webkit-transition: all .25s ease-out;
+           -moz-transition: all .25s ease-out;
+                transition: all .25s ease-out;
+    }
+    .olix-sidebar-short .olix-main {
+        padding-left: 50px;
+        -webkit-transition: all .25s ease-out;
+           -moz-transition: all .25s ease-out;
+                transition: all .25s ease-out;
     }
 }
 
@@ -67,11 +94,40 @@ body {
 .olix-sidebar {
     display: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px) {
     .olix-sidebar {
+        width: 50px;
         position: fixed;
         display: block;
+        top: 0px;
+        bottom: 0;
+        left: 0;
+        background-color: #f8f8f8;
+        margin: 0;
+        padding: 55px 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        z-index: 1000;
+        border-right: 1px solid #e7e7e7;
+    }
+    .olix-sidebar-long .olix-sidebar {
         width: 200px;
+    }
+    .olix-sidebar .text, .olix-sidebar .caret, .olix-sidebar .collapse.in {
+        display: none;
+    }
+    .olix-sidebar-long .olix-sidebar .text, .olix-sidebar-long .olix-sidebar .caret {
+        display: inline-block;
+    }
+    .olix-sidebar-long .olix-sidebar .collapse.in {
+        display: block;
+    }
+}
+@media (min-width: 992px) {
+    .olix-sidebar {
+        width: 200px;
+        position: fixed;
+        display: block;
         top: 0px;
         bottom: 0;
         left: 0;
@@ -84,8 +140,14 @@ body {
         z-index: 1000;
         border-right: 1px solid #e7e7e7;
     }
+    .olix-sidebar-short .olix-sidebar {
+        width: 50px;
+    }
+    .olix-sidebar-short .olix-sidebar .text, .olix-sidebar-short .olix-sidebar .caret,
+    .olix-sidebar-short .olix-sidebar ul ul {
+        display: none;
+    }
 }
-
 .olix-sidebar .caret {
     float: right;
     margin-top: 8px;
@@ -103,6 +165,18 @@ body {
     background-color: #f8f8f8;
 }
 .olix-sidebar ul ul > li > a {
-    padding: 5px 20px;
+    padding: 8px 20px;
     font-size: 0.9em;
+}
+.olix-sidebar ul ul > li.active {
+    background-color: #eee;
+}
+.olix-sidebar-toggle {
+    border-bottom: 1px solid #e7e7e7;
+    padding: 5px 0;
+    text-align: center;
+}
+.olix-sidebar-toggle span {
+    color: #428bca;
+    cursor: pointer;
 }

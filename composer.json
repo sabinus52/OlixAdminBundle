@@ -20,7 +20,8 @@
         "symfony/http-foundation" : "~2.6",
         "robloach/component-installer": "~0.0",
         "components/bootstrap": "3.2.*",
-        "components/font-awesome": "*"
+        "components/font-awesome": "*",
+        "components/jquery-cookie": "1.4.*"
     },
     "autoload" : {
         "psr-4" : {
