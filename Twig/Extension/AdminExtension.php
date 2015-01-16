@@ -60,12 +60,13 @@ class AdminExtension extends \Twig_Extension
 
     /**
      * Fonction de rendu du menu
-     *
+     * 
+     * @param string $menuActive : nom du menu à activer
      * @param array $options : Options dans le contexte du rendu de la vue
      */
-    public function renderSidebar(array $options = array())
+    public function renderSidebar($menuActive = null, array $options = array())
     {
-        return $this->renderer->renderSidebar($options);
+        return $this->renderer->renderSidebar($menuActive, $options);
     }
 
 

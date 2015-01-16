@@ -65,14 +65,19 @@ class AdminRenderer
 
     /**
      * Rendu de la sidebar
-     *
+     * 
+     * @param string $menuActive : nom du menu à activer
      * @param array $options : Options dans le contexte du rendu de la vue
      */
-    public function renderSidebar(array $options = array())
+    public function renderSidebar($menuActive = null, array $options = array())
     {
         return $this->container->get('templating')->render(
             'OlixAdminBundle:Sidebar:sidebar.html.twig',
-            $this->factory->fetch());
+            array_merge(
+                array('sidebar_menu_active' => $menuActive),
+                $this->factory->fetch()
+            )
+        );
     }
 
 }
