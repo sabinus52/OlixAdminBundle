@@ -18,6 +18,7 @@ var olixAdminSideBar = {
 
         // En fonction de la taille de la fenêtre, ajoute le style CSS pour la sidebar
         $( window ).resize( this.initializeByDisplay );
+        this.initializeByDisplay();
 
         // Click sur la bouton d'affichage ou pas de la sidebar mini
         $("#olixSidebarToggle span").click(function(e) {
