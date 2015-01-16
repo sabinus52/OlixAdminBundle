@@ -33,6 +33,12 @@ class SidebarItem implements SidebarItemInterface
     protected $route = null;
 
     /**
+     * Paramètres de la route
+     * @var array
+     */
+    protected $routeParams = array();
+
+    /**
      * Icone du menu
      * @var string
      */
@@ -80,14 +86,16 @@ class SidebarItem implements SidebarItemInterface
     {
         $options = array_merge(
             array(
-                'label'     => null,
-                'route'     => null,
-                'icon'      => null,
-                'display'   => true,
+                'label'         => null,
+                'route'         => null,
+                'routeParams'   => array(),
+                'icon'          => null,
+                'display'       => true,
             ), $options);
         $this
             ->setLabel($options['label'])
             ->setRoute($options['route'])
+            ->setRouteParams($options['routeParams'])
             ->setIcon($options['icon'])
             ->setDisplay($options['display'])
         ;
@@ -139,6 +147,26 @@ class SidebarItem implements SidebarItemInterface
     public function setRoute($route)
     {
         $this->route = $route;
+        return $this;
+    }
+
+
+    /**
+     * @return array
+     */
+    public function getRouteParams()
+    {
+        return $this->routeParams;
+    }
+
+
+    /**
+     * @param array $route
+     * @return \Olix\AdminBundle\Factory\SidebarItem
+    */
+    public function setRouteParams($params)
+    {
+        $this->routeParams = $params;
         return $this;
     }
 

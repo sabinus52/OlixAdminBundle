@@ -43,12 +43,14 @@ class AdminConfig implements ConfigInterface
         $menu2->addChild('ssmenu21', array(
             'label' => 'Sous menu 21',
             'icon'  => 'fa fa-edit fa-fw',
-            'route' => 'olix_admin_menu21',
+            'route' => 'olix_admin_menu2',
+            'routeParams' => array('page' => 1),
         ));
         $menu2->addChild('ssmenu22', array(
             'label' => 'Sous menu 22',
             'icon'  => 'fa fa-table fa-fw',
-            'route' => 'olix_admin_menu22',
+            'route' => 'olix_admin_menu2',
+            'routeParams' => array('page' => 2),
         ));
     }
 

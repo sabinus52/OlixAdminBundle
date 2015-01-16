@@ -21,7 +21,7 @@
             {% endfor %}
         </ul>
     {% else %}
-        <a href="{% if item.route %}{{ path(item.route) }}{% else %}#{% endif %}">{{ block('olix_admin_sidebar_item_label') }}</a>
+        <a href="{% if item.route %}{{ path(item.route, item.routeParams) }}{% else %}#{% endif %}">{{ block('olix_admin_sidebar_item_label') }}</a>
     {% endif %}
     </li>
 {% endspaceless %}

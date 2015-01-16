@@ -57,6 +57,23 @@ interface SidebarItemInterface extends \ArrayAccess, \Countable, \IteratorAggreg
 
 
     /**
+     * Retourne les paramètres de la route
+     *
+     * @return array
+     */
+    public function getRouteParams();
+
+
+    /**
+     * Affecte des paramètres à une route
+     *
+     * @param array $route
+     * @return \Olix\AdminBundle\Factory\SidebarItemInterface
+    */
+    public function setRouteParams($params);
+
+
+    /**
      * Retourne l'icone
      * 
      * @return string

@@ -63,10 +63,11 @@ abstract class SidebarTestCase extends \PHPUnit_Framework_TestCase
         // Création de l'arbre de la sidebar
         $this->sidebar = $factory->createSidebar();
         $this->child1 = $this->sidebar->addChild('child 1', array(
-            'label'     => 'Child one',
-            'route'     => 'olix_admin_route_test',
-            'icon'      => 'test.png',
-            'display'   => false,
+            'label'         => 'Child one',
+            'route'         => 'olix_admin_route_test',
+            'routeParams'   => array('param1' => 1, 'param2' => 'toto'),
+            'icon'          => 'test.png',
+            'display'       => false,
         ));
         $this->child2 = $this->sidebar->addChild('child 2');
         $this->c21 = $this->child2->addChild('C 21');

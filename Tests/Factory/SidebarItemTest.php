@@ -19,8 +19,9 @@ class SidebarItemTest extends SidebarTestCase
         $this->assertEquals('child 1', $this->child1->getName());
         $this->assertEquals('Child one', $this->child1->getLabel());
         $this->assertEquals('olix_admin_route_test', $this->child1->getRoute());
+        $this->assertEquals(array('param1' => 1, 'param2' => 'toto'), $this->child1->getRouteParams());
         $this->assertEquals('test.png', $this->child1->getIcon());
-        $this->assertFalse($this->child1->isDeplayed());
+        $this->assertFalse($this->child1->isDisplayed());
     }
 
 

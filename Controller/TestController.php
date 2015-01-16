@@ -44,22 +44,13 @@ class TestController extends Controller
 
 
     /**
-     * @Route("/test-menu21", name="olix_admin_menu21")
+     * @Route("/test-menu2/{page}", name="olix_admin_menu2")
      */
-    public function menu21Action()
+    public function menu21Action($page)
     {
         return $this->render('OlixAdminBundle:Test:index.html.twig', array(
-            'page_name' => "Menu 21",
-        ));
-    }
-
-    /**
-     * @Route("/test-menu22", name="olix_admin_menu22")
-     */
-    public function menu22Action()
-    {
-        return $this->render('OlixAdminBundle:Test:index.html.twig', array(
-            'page_name' => "Menu 22",
+            'sidebar_menu_active' => 'ssmenu2'.$page,
+            'page_name' => "Menu 2 - $page",
         ));
     }
 
