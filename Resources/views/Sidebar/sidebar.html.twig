@@ -2,9 +2,9 @@
 
 
 {% block olix_admin_sidebar %}
-    <ul class="nav nav-pills nav-stacked">
+    <ul class="nav" id="olixSidebar">
         {% for item in sidebar %}
-            {{ block('olix_admin_sidebar_item') }}
+            {% if item.displayed %}{{ block('olix_admin_sidebar_item') }}{% endif %}
         {% endfor %}
     </ul>
 {% endblock olix_admin_sidebar %}
@@ -14,16 +14,15 @@
 {% spaceless %}
     <li>
     {% if item.children %}
-        <a data-toggle="collapse" href="#{{ item.name }}">{{ block('olix_admin_sidebar_item_label') }}<span class="caret"></span></a>
-        <ul class="nav nav-pills nav-stacked collapse" id="{{ item.name }}">
+        <a href="#{{ item.name }}">{{ block('olix_admin_sidebar_item_label') }}<span class="caret"></span></a>
+        <ul class="nav collapse" id="{{ item.name }}">
             {% for item in item %}
-                {{ block('olix_admin_sidebar_item') }}
+                {% if item.displayed %}{{ block('olix_admin_sidebar_item') }}{% endif %}
             {% endfor %}
         </ul>
     {% else %}
         <a href="{% if item.route %}{{ path(item.route) }}{% else %}#{% endif %}">{{ block('olix_admin_sidebar_item_label') }}</a>
     {% endif %}
-        
     </li>
 {% endspaceless %}
 {% endblock olix_admin_sidebar_item %}
@@ -31,6 +30,7 @@
 
 {% block olix_admin_sidebar_item_label %}
 {% spaceless %}
-    <i class="{{ item.icon }}"></i> {{ item.label }}
+    <i class="{{ item.icon }}"></i> <span class="text">{{ item.label }}</span>
 {% endspaceless %}
 {% endblock olix_admin_sidebar_item_label %}
+    
