@@ -46,9 +46,58 @@ body {
 
 /**
  * Contenu principal de la page
+ * Décalage vers la droite sauf sur mobile
+ * Padding de 10px
  */
 .olix-main {
-    padding: 10px;
+    padding: 0px;
     background-color: #ececec;
 }
+@media (min-width: 768px) {
+    .olix-main {
+        padding-left: 200px;
+        padding-right: 0px;
+    }
+}
 
+
+/**
+ * Barre de navigation de gauche
+ */
+/* Hide for mobile */
+.olix-sidebar {
+    display: none;
+}
+@media (min-width: 768px) {
+    .olix-sidebar {
+        position: fixed;
+        display: block;
+        width: 200px;
+        top: 0px;
+        bottom: 0;
+        left: 0;
+        background-color: #222;
+        margin: 0;
+        padding: 55px 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        z-index: 1000;
+        z-index: 1000;
+        border-right: 1px solid #080808;
+    }
+}
+
+.olix-sidebar .caret {
+    float: right;
+    margin-top: 8px;
+}
+.olix-sidebar ul {
+    background-color: #222;
+}
+.olix-sidebar ul ul {
+    background-color: #444;
+}
+.olix-sidebar ul ul > li > a {
+    padding: 5px 20px;
+    font-size: 0.9em;
+}

@@ -41,7 +41,8 @@ class AdminExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            new \Twig_SimpleFunction('olix_admin_navbar', array($this, 'renderNavbar'), array('is_safe' => array('html')))
+            new \Twig_SimpleFunction('olix_admin_navbar', array($this, 'renderNavbar'), array('is_safe' => array('html'))),
+            new \Twig_SimpleFunction('olix_admin_sidebar', array($this, 'renderSidebar'), array('is_safe' => array('html'))),
         );
     }
 
@@ -54,6 +55,17 @@ class AdminExtension extends \Twig_Extension
     public function renderNavbar(array $options = array())
     {
         return $this->renderer->renderNavbar($options);
+    }
+
+
+    /**
+     * Fonction de rendu du menu
+     *
+     * @param array $options : Options dans le contexte du rendu de la vue
+     */
+    public function renderSidebar(array $options = array())
+    {
+        return $this->renderer->renderSidebar($options);
     }
 
 

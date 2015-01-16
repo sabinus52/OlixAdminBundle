@@ -62,4 +62,17 @@ class AdminRenderer
             $this->factory->fetch());
     }
 
+
+    /**
+     * Rendu de la sidebar
+     *
+     * @param array $options : Options dans le contexte du rendu de la vue
+     */
+    public function renderSidebar(array $options = array())
+    {
+        return $this->container->get('templating')->render(
+            'OlixAdminBundle:Sidebar:sidebar.html.twig',
+            $this->factory->fetch());
+    }
+
 }

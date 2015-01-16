@@ -32,6 +32,12 @@ class AdminFactory
      */
     protected $description = null;
 
+    /**
+     * @var \Olix\AdminBundle\Factory\SidebarItem
+     */
+    protected $sidebar = null;
+
+
 
     /**
      * Affecte la marque de l'admin
@@ -73,6 +79,18 @@ class AdminFactory
 
 
     /**
+     * Créer la sidebar
+     * 
+     * @return \Olix\AdminBundle\Factory\SidebarItem
+     */
+    public function createSidebar()
+    {
+        $this->sidebar = new SidebarItem('root', array());
+        return $this->sidebar;
+    }
+
+
+    /**
      * Retourne la configuration
      * 
      * @return array
@@ -83,6 +101,7 @@ class AdminFactory
             'brand' => $this->brand,
             'logo' => $this->logo,
             'description' => $this->description,
+            'sidebar' => $this->sidebar,
         );
     }
 
