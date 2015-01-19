@@ -1,12 +1,11 @@
 services:
 
-# Service de rendu des différents blocs
-    olix.admin.renderer:
-        class: Olix\AdminBundle\Twig\AdminRenderer
+# Service de rendu de l'admin
+    olix.admin:
+        class: Olix\AdminBundle\Renderer\AdminRenderer
         arguments: [ "@service_container" ]
 # Extension TWIG
     olix.admin.twig.extension.admin:
         class: Olix\AdminBundle\Twig\Extension\AdminExtension
-        arguments: [ "@olix.admin.renderer" ]
         tags:
             - { name: twig.extension }

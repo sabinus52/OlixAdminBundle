@@ -12,9 +12,9 @@
 
 <body>
 
-    {{ olix_admin_navbar() }}
+    {{ olix_admin_navbar(olix) }}
 
-    {{ olix_admin_sidebar(sidebar_menu_active|default('')) }}
+    {{ olix_admin_sidebar(sidebar_menu_active|default(''), olix) }}
 
     <div class="olix-main">
 

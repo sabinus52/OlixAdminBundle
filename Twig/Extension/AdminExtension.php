@@ -10,28 +10,9 @@
 
 namespace Olix\AdminBundle\Twig\Extension;
 
-use Olix\AdminBundle\Twig\AdminRenderer;
-
 
 class AdminExtension extends \Twig_Extension
 {
-
-    /**
-     * @var Olix\AdminBundle\Twig\AdminRenderer
-     */
-    public $renderer;
-
-
-    /**
-     * Constructeur avec le gestionnaire de rendu AdminRenderer
-     * 
-     * @param AdminRenderer $renderer
-     */
-    public function __construct(AdminRenderer $renderer)
-    {
-        $this->renderer = $renderer;
-    }
-
 
     /**
      * Déclaration des fonctions
@@ -41,8 +22,8 @@ class AdminExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            new \Twig_SimpleFunction('olix_admin_navbar', array($this, 'renderNavbar'), array('is_safe' => array('html'))),
-            new \Twig_SimpleFunction('olix_admin_sidebar', array($this, 'renderSidebar'), array('is_safe' => array('html'))),
+            new \Twig_SimpleFunction('olix_admin_navbar', array($this, 'renderNavbar'), array('is_safe' => array('html'), 'needs_environment' => true)),
+            new \Twig_SimpleFunction('olix_admin_sidebar', array($this, 'renderSidebar'), array('is_safe' => array('html'), 'needs_environment' => true)),
         );
     }
 
@@ -52,9 +33,12 @@ class AdminExtension extends \Twig_Extension
      * 
      * @param array $options : Options dans le contexte du rendu de la vue
      */
-    public function renderNavbar(array $options = array())
+    public function renderNavbar(\Twig_Environment $environment, array $options = array())
     {
-        return $this->renderer->renderNavbar($options);
+        return $environment->render(
+            'OlixAdminBundle:Navbar:navbar.html.twig',
+            $options
+        );
     }
 
 
@@ -64,9 +48,12 @@ class AdminExtension extends \Twig_Extension
      * @param string $menuActive : nom du menu à activer
      * @param array $options : Options dans le contexte du rendu de la vue
      */
-    public function renderSidebar($menuActive = null, array $options = array())
+    public function renderSidebar(\Twig_Environment $environment, $menuActive = null, array $options = array())
     {
-        return $this->renderer->renderSidebar($menuActive, $options);
+        return $environment->render(
+            'OlixAdminBundle:Sidebar:sidebar.html.twig',
+            array_merge(array('sidebar_menu_active' => $menuActive), $options)
+        );
     }
 
 

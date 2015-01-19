@@ -13,7 +13,7 @@ class TestController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('OlixAdminBundle:Test:index.html.twig', array(
+        return $this->container->get('olix.admin')->render('OlixAdminBundle:Test:index.html.twig', array(
             'sidebar_menu_active' => 'dashboard',
             'page_name' => "Tableau de bord",
         ));
@@ -25,7 +25,7 @@ class TestController extends Controller
      */
     public function menu11Action()
     {
-        return $this->render('OlixAdminBundle:Test:index.html.twig', array(
+        return $this->container->get('olix.admin')->render('OlixAdminBundle:Test:index.html.twig', array(
             'sidebar_menu_active' => 'ssmenu11',
             'page_name' => "Menu 11",
         ));
@@ -36,7 +36,7 @@ class TestController extends Controller
      */
     public function menu12Action()
     {
-        return $this->render('OlixAdminBundle:Test:index.html.twig', array(
+        return $this->container->get('olix.admin')->render('OlixAdminBundle:Test:index.html.twig', array(
             'sidebar_menu_active' => 'ssmenu12',
             'page_name' => "Menu 12",
         ));
@@ -48,7 +48,7 @@ class TestController extends Controller
      */
     public function menu21Action($page)
     {
-        return $this->render('OlixAdminBundle:Test:index.html.twig', array(
+        return $this->container->get('olix.admin')->render('OlixAdminBundle:Test:index.html.twig', array(
             'sidebar_menu_active' => 'ssmenu2'.$page,
             'page_name' => "Menu 2 - $page",
         ));
