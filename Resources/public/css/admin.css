@@ -183,3 +183,19 @@ body {
     color: #428bca;
     cursor: pointer;
 }
+
+
+/**
+ * Jumbotron
+ */
+.page-header {
+    margin-top: 0px;
+    margin-bottom: 15px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+}
+.page-header h1 {
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}

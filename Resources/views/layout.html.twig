@@ -18,6 +18,10 @@
 
     <div class="olix-main">
 
+        <div class="page-header">
+            <h1>{% block header1 %}<i class="{{ olix.menuactive.icon }}"></i> {{ olix.menuactive.label }}{% endblock %} <small>{% block header2 %}{% endblock %}</small></h1>
+        </div>
+
         <div class="container-fluid">
             {% block content %}{% endblock %}
         </div>
