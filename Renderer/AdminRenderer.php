@@ -52,7 +52,10 @@ class AdminRenderer extends ContainerAware
      */
     protected function build()
     {
-        $this->config = new \Olix\AdminBundle\Config\AdminConfig();
+        $classConfig = $this->container->getParameter('olix_admin.config_class');
+        if (!class_exists($classConfig))
+            throw new \InvalidArgumentException(sprintf('The class "%s" defined in the config.yml "olix_admin.config_class" is not exists', $classConfig));
+        $this->config = new $classConfig();
         $this->factory = new AdminFactory();
         $this->config->create($this->factory);
     }
