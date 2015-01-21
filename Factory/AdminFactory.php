@@ -37,6 +37,10 @@ class AdminFactory
      */
     protected $sidebar = null;
 
+    /**
+     * @var \Olix\AdminBundle\Factory\SidebarItem
+     */
+    protected $menuActiv = null;
 
 
     /**
@@ -91,18 +95,6 @@ class AdminFactory
 
 
     /**
-     * Retourne l'item d'un fils de la sidebar
-     * 
-     * @param string $name Nom de l'item
-     * @return \Olix\AdminBundle\Factory\SidebarItem
-     */
-    public function getItemOfSidebar($name)
-    {
-        return $this->sidebar->getItem($name);
-    }
-
-
-    /**
      * Retourne la configuration
      * 
      * @return array
@@ -114,7 +106,42 @@ class AdminFactory
             'logo' => $this->logo,
             'description' => $this->description,
             'sidebar' => $this->sidebar,
+            'menuactive' => $this->menuActiv,
+            'breadcrumb' => $this->buildBreadcrumb($this->menuActiv)
         );
+    }
+
+
+    /**
+     * Construit l'admin en fonction du menu activé
+     * 
+     * @param string $menuActive
+     */
+    public function build($menuActive = null)
+    {
+        // Récupère l'item du menu actif
+        if ($menuActive !== null) {
+            $this->menuActiv = $this->sidebar->getItem($menuActive);
+        }
+        if ($this->menuActiv === null) {
+            $this->menuActiv = new SidebarItem('null', array());
+        }
+    }
+
+
+    /**
+     * Construit et retourne le fil d'ariane sous forme de tableau
+     * 
+     * @param SidebarItem $item Menu actif
+     * @return array of SidebarItem
+     */
+    protected function buildBreadcrumb(SidebarItem $item)
+    {
+        $breadcrumb = array();
+        do {
+            $breadcrumb[] = $item;
+        } while ($item = $item->getParent());
+        return array_reverse($breadcrumb);
     }
 
 }

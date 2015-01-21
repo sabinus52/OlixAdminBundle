@@ -24,6 +24,7 @@ class AdminExtension extends \Twig_Extension
         return array(
             new \Twig_SimpleFunction('olix_admin_navbar', array($this, 'renderNavbar'), array('is_safe' => array('html'), 'needs_environment' => true)),
             new \Twig_SimpleFunction('olix_admin_sidebar', array($this, 'renderSidebar'), array('is_safe' => array('html'), 'needs_environment' => true)),
+            new \Twig_SimpleFunction('olix_admin_breadcrumb', array($this, 'renderBreadcrumb'), array('is_safe' => array('html'), 'needs_environment' => true)),
         );
     }
 
@@ -51,6 +52,20 @@ class AdminExtension extends \Twig_Extension
     {
         return $environment->render(
             'OlixAdminBundle:Sidebar:sidebar.html.twig',
+            $options
+        );
+    }
+
+
+    /**
+     * Fonction de rendu du fil d'ariane
+     *
+     * @param array $options : Options dans le contexte du rendu de la vue
+     */
+    public function renderBreadcrumb(\Twig_Environment $environment, array $options = array())
+    {
+        return $environment->render(
+            'OlixAdminBundle:Breadcrumb:breadcrumb.html.twig',
             $options
         );
     }

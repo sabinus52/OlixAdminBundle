@@ -15,6 +15,9 @@ class AdminConfig implements ConfigInterface
               ->setDescription('Admin Template');
         
         $sidebar = $admin->createSidebar();
+        $sidebar->setIcon("fa fa-home fa-fw")
+                ->setLabel("Accueil")
+                ->setRoute('olix_admin_dashboard');
         $sidebar->addChild('dashboard', array(
             'label' => 'Tableau de bord',
             'icon'  => 'fa fa-dashboard fa-fw',

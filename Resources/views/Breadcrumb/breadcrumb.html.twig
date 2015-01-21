@@ -1,0 +1,21 @@
+{% extends 'OlixAdminBundle:Breadcrumb:breadcrumb_base.html.twig' %}
+
+
+{% block olix_admin_breadcrumb %}
+    <ol class="breadcrumb">
+        {% for item in breadcrumb %}
+            {% if item.displayed %}{{ block('olix_admin_breadcrumb_item') }}{% endif %}
+        {% endfor %}
+    </ol>
+{% endblock olix_admin_breadcrumb %}
+
+
+{% block olix_admin_breadcrumb_item %}
+    <li><span class="{{ item.icon }}"></span>
+    {% if item.route %}
+        <a href="{{ path(item.route, item.routeParams) }}">{{ item.label }}</a>
+    {% else %}
+        {{ item.label }}
+    {% endif %}
+    </li>
+{% endblock olix_admin_breadcrumb_item %}

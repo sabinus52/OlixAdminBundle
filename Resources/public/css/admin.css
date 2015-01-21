@@ -199,3 +199,13 @@ body {
     margin-top: 10px;
     margin-bottom: 5px;
 }
+
+
+/**
+ * BreadCrumb
+ */
+.breadcrumb {
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: #e8e8e8;
+}

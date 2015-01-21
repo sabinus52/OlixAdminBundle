@@ -59,22 +59,6 @@ class AdminRenderer extends ContainerAware
 
 
     /**
-     * Retourne l'item du menu actif de la sidebar
-     * 
-     * @param string $menu Nom de l'item
-     * @return \Olix\AdminBundle\Factory\SidebarItem
-     */
-    protected function getItemMenuActive($menu)
-    {
-        if ($menu == null)
-            $result = null;
-        else
-            $result = $this->factory->getItemOfSidebar($menu);
-        return ($result === null) ? new SidebarItem('null', array()) : $result;
-    }
-
-
-    /**
      * Rendu de l'admin en fonction de la vue
      *
      * @param string   $view       Nom de la vue
@@ -86,8 +70,8 @@ class AdminRenderer extends ContainerAware
      */
     public function render($view, $menuActive, array $parameters = array(), Response $response = null)
     {
+        $this->factory->build($menuActive);
         $parameters['olix'] = $this->factory->fetch();
-        $parameters['olix']['menuactive'] = $this->getItemMenuActive($menuActive);
         
         return $this->container->get('templating')->renderResponse($view, $parameters, $response);
     }

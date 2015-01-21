@@ -22,6 +22,10 @@
             <h1>{% block header1 %}<i class="{{ olix.menuactive.icon }}"></i> {{ olix.menuactive.label }}{% endblock %} <small>{% block header2 %}{% endblock %}</small></h1>
         </div>
 
+        {% block breadcrumb %}
+            {{ olix_admin_breadcrumb(olix) }}
+        {% endblock %}
+
         <div class="container-fluid">
             {% block content %}{% endblock %}
         </div>
