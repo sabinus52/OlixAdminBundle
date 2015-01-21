@@ -41,6 +41,14 @@ class SidebarItemTest extends SidebarTestCase
     }
 
 
+    public function testGetItem()
+    {
+        $this->assertSame($this->child2, $this->sidebar->getItem('child 2'));
+        $this->assertSame($this->c31, $this->sidebar->getItem('C 31'));
+        $this->assertSame($this->c32, $this->sidebar->getItem('C 32'));
+    }
+
+
     public function testCountable()
     {
         $this->assertCount(3, $this->sidebar);

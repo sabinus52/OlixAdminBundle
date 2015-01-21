@@ -12,7 +12,7 @@
 
 {% block olix_admin_sidebar_item %}
 {% spaceless %}
-    <li class="{% if sidebar_menu_active in item.children|keys or sidebar_menu_active == item.name %}active{% endif %}">
+    <li class="{% if menuactive.name in item.children|keys or menuactive.name == item.name %}active{% endif %}">
     {% if item.children %}
         <a href="#{{ item.name }}">{{ block('olix_admin_sidebar_item_label') }}<span class="caret"></span></a>
         <ul class="nav collapse" id="{{ item.name }}">

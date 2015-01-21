@@ -157,4 +157,13 @@ interface SidebarItemInterface extends \ArrayAccess, \Countable, \IteratorAggreg
      */
     public function setParent(SidebarItemInterface $parent = null);
 
+
+    /**
+     * Retourne l'item dans toute l'arborescence grâce à son nom
+     *
+     * @param string $name Nom de l'item à rechercher
+     * @return \Olix\AdminBundle\Factory\SidebarItemInterface
+     */
+    public function getItem($name);
+
 }

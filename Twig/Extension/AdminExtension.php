@@ -45,14 +45,13 @@ class AdminExtension extends \Twig_Extension
     /**
      * Fonction de rendu du menu
      * 
-     * @param string $menuActive : nom du menu à activer
      * @param array $options : Options dans le contexte du rendu de la vue
      */
-    public function renderSidebar(\Twig_Environment $environment, $menuActive = null, array $options = array())
+    public function renderSidebar(\Twig_Environment $environment, array $options = array())
     {
         return $environment->render(
             'OlixAdminBundle:Sidebar:sidebar.html.twig',
-            array_merge(array('sidebar_menu_active' => $menuActive), $options)
+            $options
         );
     }
 

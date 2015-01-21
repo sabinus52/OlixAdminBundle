@@ -91,6 +91,18 @@ class AdminFactory
 
 
     /**
+     * Retourne l'item d'un fils de la sidebar
+     * 
+     * @param string $name Nom de l'item
+     * @return \Olix\AdminBundle\Factory\SidebarItem
+     */
+    public function getItemOfSidebar($name)
+    {
+        return $this->sidebar->getItem($name);
+    }
+
+
+    /**
      * Retourne la configuration
      * 
      * @return array

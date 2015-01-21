@@ -277,6 +277,24 @@ class SidebarItem implements SidebarItemInterface
 
 
     /**
+     * @param string $name Nom de l'item à rechercher
+     * @return \Olix\AdminBundle\Factory\SidebarItem|NULL
+     */
+    public function getItem($name)
+    {
+        foreach ($this->children as $child) {
+            if ($child->getName() == $name)
+                return $child;
+            else {
+                $result = $child->getItem($name);
+                if ($result !== null) return $result;
+            }
+        }
+        return null;
+    }
+
+
+    /**
      * @see Countable::count()
      */
     public function count()
