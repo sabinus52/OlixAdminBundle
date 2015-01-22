@@ -209,3 +209,328 @@ body {
     margin-right: 15px;
     background-color: #e8e8e8;
 }
+
+
+/**
+ * Portlet Box
+ */
+.olix-portlet {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.olix-portlet-header {
+    padding: 10px 15px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom: 1px solid #ddd;
+}
+.olix-portlet-footer {
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.olix-portlet-header:before, .olix-portlet-header:after,
+.olix-portlet-footer:before, .olix-portlet-footer:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+.olix-portlet-header:after, .olix-portlet-footer:after {
+    clear: both;
+}
+.olix-portlet-header .title, .olix-portlet-header .icon {
+    float:left;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit;
+}
+.olix-portlet-header .icon {
+    margin-right: 10px;
+}
+.olix-portlet-header .toolbar, .olix-portlet-footer .toolbar {
+    float: right;
+    display: inline-block;
+    /*margin-left: 10px;*/
+    color: inherit;
+}
+.olix-portlet-header .toolbar a.link, .olix-portlet-footer .toolbar a.link {
+    color: inherit;
+}
+.olix-portlet-header .toolbar a.link:hover, .olix-portlet-footer .toolbar a.link:hover {
+    color: #ccc;
+}
+.olix-portlet-header .toolbar .btn, .olix-portlet-footer .toolbar .btn {
+    padding: 1px 5px;
+}
+.olix-portlet-body {
+    padding-top: 15px;
+}
+
+.olix-portlet-border {
+    border-color: #ddd;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+.olix-portlet-border > .olix-portlet-body {
+    padding: 15px;
+}
+.olix-portlet-border > .olix-portlet-header {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+
+.olix-portlet-primary {
+    border-color: #428bca;
+}
+.olix-portlet-primary > .olix-portlet-header {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #428bca;
+}
+.olix-portlet-success {
+    border-color: #d6e9c6;
+}
+.olix-portlet-success > .olix-portlet-header {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.olix-portlet-info {
+    border-color: #bce8f1;
+}
+.olix-portlet-info > .olix-portlet-header {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.olix-portlet-warning {
+    border-color: #faebcc;
+}
+.olix-portlet-warning > .olix-portlet-header {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.olix-portlet-danger {
+    border-color: #ebccd1;
+}
+.olix-portlet-danger > .olix-portlet-header {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.olix-portlet > .olix-portlet-body + .table,
+.olix-portlet > .olix-portlet-body + .table-responsive {
+    border-top: 1px solid #ddd;
+}
+.olix-portlet > .table,
+.olix-portlet > .table-responsive > .table {
+    margin-bottom: 0;
+}
+.olix-portlet > .table:last-child,
+.olix-portlet > .table-responsive:last-child > .table:last-child {
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.olix-portlet > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.olix-portlet > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.olix-portlet > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.olix-portlet > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.olix-portlet > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.olix-portlet > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.olix-portlet > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+.olix-portlet > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+    border-bottom-left-radius: 3px;
+}
+.olix-portlet > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.olix-portlet > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.olix-portlet > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.olix-portlet > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.olix-portlet > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.olix-portlet > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.olix-portlet > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+.olix-portlet > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+    border-bottom-right-radius: 3px;
+}
+.olix-portlet > .table-bordered,
+.olix-portlet > .table-responsive > .table-bordered {
+    border-top: 0;
+}
+.olix-portlet-border > .table-bordered,
+.olix-portlet-border > .table-responsive > .table-bordered {
+    border: 0;
+}
+.olix-portlet-border > .table-bordered > thead > tr > th:first-child,
+.olix-portlet-border > .table-responsive > .table-bordered > thead > tr > th:first-child,
+.olix-portlet-border > .table-bordered > tbody > tr > th:first-child,
+.olix-portlet-border > .table-responsive > .table-bordered > tbody > tr > th:first-child,
+.olix-portlet-border > .table-bordered > tfoot > tr > th:first-child,
+.olix-portlet-border > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+.olix-portlet-border > .table-bordered > thead > tr > td:first-child,
+.olix-portlet-border > .table-responsive > .table-bordered > thead > tr > td:first-child,
+.olix-portlet-border > .table-bordered > tbody > tr > td:first-child,
+.olix-portlet-border > .table-responsive > .table-bordered > tbody > tr > td:first-child,
+.olix-portlet-border > .table-bordered > tfoot > tr > td:first-child,
+.olix-portlet-border > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+    border-left: 0;
+}
+.olix-portlet-border > .table-bordered > thead > tr > th:last-child,
+.olix-portlet-border > .table-responsive > .table-bordered > thead > tr > th:last-child,
+.olix-portlet-border > .table-bordered > tbody > tr > th:last-child,
+.olix-portlet-border > .table-responsive > .table-bordered > tbody > tr > th:last-child,
+.olix-portlet-border > .table-bordered > tfoot > tr > th:last-child,
+.olix-portlet-border > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+.olix-portlet-border > .table-bordered > thead > tr > td:last-child,
+.olix-portlet-border > .table-responsive > .table-bordered > thead > tr > td:last-child,
+.olix-portlet-border > .table-bordered > tbody > tr > td:last-child,
+.olix-portlet-border > .table-responsive > .table-bordered > tbody > tr > td:last-child,
+.olix-portlet-border > .table-bordered > tfoot > tr > td:last-child,
+.olix-portlet-border > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+    border-right: 0;
+}
+.olix-portlet-border > .table-bordered > tbody > tr:last-child > td,
+.olix-portlet-border > .table-responsive > .table-bordered > tbody > tr:last-child > td,
+.olix-portlet-border > .table-bordered > tfoot > tr:last-child > td,
+.olix-portlet-border > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
+.olix-portlet-border > .table-bordered > tbody > tr:last-child > th,
+.olix-portlet-border > .table-responsive > .table-bordered > tbody > tr:last-child > th,
+.olix-portlet-border > .table-bordered > tfoot > tr:last-child > th,
+.olix-portlet-border > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
+    border-bottom: 0;
+}
+.olix-portlet-body > hr {
+    border-color: #ddd;
+}
+.olix-portlet-border .olix-portlet-body > hr {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.olix-portlet .olix-portlet-body > .nav-tabs {
+    border-bottom: 0 none;
+    /*margin-right: 0;*/
+    overflow: hidden;
+    position: relative;
+    top: -56px;
+}
+.olix-portlet-border .nav-tabs.olix-portlet-header {
+    padding-top: 3px;
+    padding-bottom: 0;
+}
+.olix-portlet-sortable-highlight {
+    background: #f4f4f4;
+    border: 1px dashed #ddd;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+
+/**
+ * Boutons applicatifs
+ */
+.olix-btn-app {
+    position: relative;
+    display: inline-block;
+    height: 60px;
+    min-width: 80px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    padding: 5px 5px 0px 5px;
+    margin: 0 10px 10px 0px;
+    color: #666;
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.olix-btn-app:hover, .olix-btn-app:focus, .olix-btn-app:active, .olix-btn-app.active {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+    text-decoration: none;
+}
+.olix-btn-app:active, .olix-btn-app.active {
+    background-image: none;
+}
+.olix-btn-app.disabled, .olix-btn-app.disabled:hover, .olix-btn-app.disabled:focus, .olix-btn-app.disabled:active, .olix-btn-app.disabled.active {
+    background-color: #fff;
+    border-color: #ccc;
+}
+.olix-btn-app > .fa, .olix-btn-app i {
+    display: block;
+}
+.olix-btn-app > .badge {
+    position: absolute;
+    top: -3px;
+    right: -8px;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+
+/**
+ * Boutons
+ */
+.btn-dark {
+    color: #fff;
+    background-color: #6f6f6f;
+    border-color: #5a5a5a;
+}
+.btn-dark:hover, .btn-dark:focus, .btn-dark:active, .btn-dark.active, .open > .dropdown-toggle.btn-dark {
+    color: #fff;
+    background-color: #575757;
+    border-color: #3b3b3b;
+}
+.btn-dark:active, .btn-dark.active, .open > .dropdown-toggle.btn-dark {
+    background-image: none;
+}
+.btn-dark.disabled, .btn-dark[disabled], fieldset[disabled] .btn-dark,
+.btn-dark.disabled:hover, .btn-dark[disabled]:hover, fieldset[disabled] .btn-dark:hover,
+.btn-dark.disabled:focus, .btn-dark[disabled]:focus, fieldset[disabled] .btn-dark:focus,
+.btn-dark.disabled:active, .btn-dark[disabled]:active, fieldset[disabled] .btn-dark:active,
+.btn-dark.disabled.active, .btn-dark[disabled].active, fieldset[disabled] .btn-dark.active {
+    background-color: #575757;
+    border-color: #3b3b3b;
+}
+.btn-dark .badge {
+    color: #3b3b3b;
+    background-color: #fff;
+}
+
+
+/**
+ * Badges
+ */
+.badge-dark {
+    background: #575757;
+}
+.badge-green {
+    background: #5cb85c;
+}
+.badge-blue {
+    background: #428bca;
+}
+.badge-orange {
+    background: #f0ad4e;
+}
+.badge-red {
+    background: #d9534f;
+}
+.badge-purple {
+    background: #a069c3;
+}
+.badge-pink {
+    background: #c6699f;
+}
