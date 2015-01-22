@@ -153,13 +153,16 @@ var olixAdminGrow = {
    init: function() {
        $.growl(false, {
            offset: {
-               x: 20,
+               x: 15,
                y: 70
            },
            mouse_over: 'pause',
            animate: {
-               enter: 'animated fadeInDown',
-               exit: 'animated fadeInUp'
+               enter: 'animated zoomInDown',
+               exit: 'animated zoomOutUp'
+           },
+           onShown: function() {
+               $(".growl").addClass('growl-animate-exit');
            },
            template: this.template
        });
