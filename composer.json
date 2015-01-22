@@ -21,7 +21,8 @@
         "robloach/component-installer": "~0.0",
         "components/bootstrap": "3.2.*",
         "components/font-awesome": "*",
-        "components/jquery-cookie": "1.4.*"
+        "components/jquery-cookie": "1.4.*",
+        "components/jqueryui": "1.11.*"
     },
     "autoload" : {
         "psr-4" : {

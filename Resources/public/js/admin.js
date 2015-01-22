@@ -97,6 +97,31 @@ var olixAdminSideBar = {
 
 
 
+/**
+ * Gestion des Widgets
+ *
+ * @namespace olixAdminWidgets
+ */
+var olixAdminWidgets = {
+
+
+    /**
+     * Initialise le déplacement pour trier les widgets dans la page
+     */
+    initSortable: function() {
+        $( ".olix-sortable" ).sortable({
+            connectWith: ".olix-sortable",
+            handle: ".olix-portlet-header",
+            placeholder: "olix-portlet-sortable-highlight",
+            forcePlaceholderSize: true
+        }).disableSelection();
+        $(".olix-sortable .olix-portlet-header").css("cursor", "move");
+    }
+
+};
+
+
+
 (function()
 {
     olixAdminSideBar.init();
