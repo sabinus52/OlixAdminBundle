@@ -548,3 +548,33 @@ body {
 .progress-bar-dark {
     background-color: #777;
 }
+
+
+/**
+ * Alertes et GROWL
+ */
+.alert-growl {
+    background-color: #000;
+    border-color: #fff;
+    color: #fff;
+}
+.growl {
+    width: 300px;
+}
+.growl .icon {
+    float: left;
+    display: block;
+    font-size: 24px;
+}
+.growl .body {
+    float: left;
+    display: block;
+    margin-left: 10px;
+}
+.growl .title {
+    display: block;
+    font-weight: 600;
+}
+.growl .message {
+    display: block;
+}
