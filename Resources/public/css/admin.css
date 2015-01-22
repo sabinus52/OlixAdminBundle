@@ -534,3 +534,17 @@ body {
 .badge-pink {
     background: #c6699f;
 }
+
+
+/**
+ * Barre de progression
+ */
+.progress-sm {
+    height: 12px;
+}
+.progress-xs {
+    height: 8px;
+}
+.progress-bar-dark {
+    background-color: #777;
+}
