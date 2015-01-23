@@ -1,0 +1,13 @@
+{% extends "bootstrap_3_horizontal_layout.html.twig" %}
+
+{% block checkbox_radio_row -%}
+{% spaceless %}
+    <div class="form-group{% if not valid %} has-error{% endif %}">
+        {{ block('form_label') }}
+        <div class="{{ block('form_group_class') }}">
+            {{ form_widget(form) }}
+            {{ form_errors(form) }}
+        </div>
+    </div>
+{% endspaceless %}
+{%- endblock checkbox_radio_row %}
