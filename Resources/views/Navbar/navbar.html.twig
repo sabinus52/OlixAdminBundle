@@ -3,9 +3,12 @@
 
 {% block olix_admin_navbar %}
     {{ block('olix_admin_navbar_header') }}
-
-    <div class="navbar-collapse collapse">
-    </div>
+    
+    {% if navbar.security is defined %}
+        {{ block('olix_admin_navbar_item_security') }}
+    {% endif %}
+    
+    {{ block('olix_admin_navbar_items') }}
 {% endblock olix_admin_navbar %}
 
 
@@ -35,4 +38,38 @@
        <span class="icon-bar"></span>
        <span class="icon-bar"></span>
     </button>
+    {% if navbar.security is defined %}
+        <button type="button" class="navbar-toggle avatar" data-toggle="collapse" data-target="#olix-security">
+            <img class="img-rounded avatar" src="{{ asset('bundles/olixsecurity/avatar/' ~ app.user.avatar) }}">
+        </button>
+    {% endif %}
 {% endblock olix_admin_navbar_toggle_sidebar %}
+
+
+{% block olix_admin_navbar_items %}
+    <div class="navbar-collapse  collapse">
+        <ul class="nav navbar-nav navbar-right">
+        {% for item in navbar %}
+            {% if item.name != 'security' %}
+                {{ block('olix_admin_navbar_item_' ~ item.name) }}
+            {% endif %}
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock olix_admin_navbar_items %}
+
+
+{% block olix_admin_navbar_item_security %}
+    <div class="navbar-collapse navbar-right collapse" id="olix-security">
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown" id="toto">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <img class="img-rounded avatar" src="{{ asset('bundles/olixsecurity/avatar/' ~ app.user.avatar) }}"> {{ app.user.name }} <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ path('fos_user_security_logout') }}"><span class="glyphicon glyphicon-off"></span> Déconnexion</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+{% endblock olix_admin_navbar_item_security %}

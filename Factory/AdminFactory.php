@@ -33,6 +33,11 @@ class AdminFactory
     protected $description = null;
 
     /**
+     * @var \Olix\AdminBundle\Factory\Navbar
+     */
+    protected $navbar = null;
+
+    /**
      * @var \Olix\AdminBundle\Factory\SidebarItem
      */
     protected $sidebar = null;
@@ -105,6 +110,7 @@ class AdminFactory
             'brand' => $this->brand,
             'logo' => $this->logo,
             'description' => $this->description,
+            'navbar' => $this->navbar,
             'sidebar' => $this->sidebar,
             'menuactive' => $this->menuActiv,
             'breadcrumb' => $this->buildBreadcrumb($this->menuActiv)
@@ -125,6 +131,12 @@ class AdminFactory
         }
         if ($this->menuActiv === null) {
             $this->menuActiv = new SidebarItem('null', array());
+        }
+        
+        // Création de la Navbar avec l'ajout auto du menu de l'utilisateur
+        $this->navbar = new Navbar();
+        if (class_exists('\Olix\SecurityBundle\OlixSecurityBundle')) {
+            $this->navbar->addItem(Navbar::ITEM_USER_PROFILE);
         }
     }
 
