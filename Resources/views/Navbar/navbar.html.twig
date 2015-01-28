@@ -64,9 +64,11 @@
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown" id="toto">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img class="img-rounded avatar" src="{{ asset('bundles/olixsecurity/avatar/' ~ app.user.avatar) }}"> {{ app.user.name }} <span class="caret"></span>
+                    <img class="img-rounded avatar" src="{{ asset(app.user.avatar) }}"> {{ app.user.name }} <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
+                    <li><a href="{{ path('olix_security_profile_edit') }}"><span class="glyphicon glyphicon-user"></span> Mon profil</a></li>
+                    <li class="divider"></li>
                     <li><a href="{{ path('fos_user_security_logout') }}"><span class="glyphicon glyphicon-off"></span> Déconnexion</a></li>
                 </ul>
             </li>
