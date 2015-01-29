@@ -73,7 +73,7 @@ class AdminRenderer extends ContainerAware
      */
     public function render($view, $menuActive, array $parameters = array(), Response $response = null)
     {
-        $this->factory->build($menuActive);
+        $this->factory->build($this->container, $menuActive);
         $parameters['olix'] = $this->factory->fetch();
         
         return $this->container->get('templating')->renderResponse($view, $parameters, $response);

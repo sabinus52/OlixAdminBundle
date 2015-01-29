@@ -10,6 +10,8 @@
 
 namespace Olix\AdminBundle\Factory;
 
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
 
 class AdminFactory
 {
@@ -121,10 +123,16 @@ class AdminFactory
     /**
      * Construit l'admin en fonction du menu activé
      * 
+     * @param Container $container
      * @param string $menuActive
      */
-    public function build($menuActive = null)
+    public function build(ContainerInterface $container, $menuActive = null)
     {
+        // Menus supplémentaires
+        if ($container->has('olix_security.sidebar')) {
+            $container->get('olix_security.sidebar')->build($this->sidebar);
+        }
+        
         // Récupère l'item du menu actif
         if ($menuActive !== null) {
             $this->menuActiv = $this->sidebar->getItem($menuActive);
