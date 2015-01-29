@@ -219,8 +219,31 @@ var olixAdminGrow = {
 
 
 
+/**
+ * Gestion de l'interface de l'admin
+ *
+ * @namespace olixAdminInterface
+ */
+var olixAdminInterface = {
+
+    /**
+    * Fonction d'initialisation du Growl
+    */
+    init: function() {
+
+        // Cache les alertes
+        setTimeout(function() {
+            if ($('.alert').hasClass('alert-dismissable') )
+                $('.alert').slideUp('slow');
+        }, 3000);
+    }
+};
+
+
+
 (function()
 {
     olixAdminSideBar.init();
     olixAdminGrow.init();
+    olixAdminInterface.init();
 })();
