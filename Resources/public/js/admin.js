@@ -235,8 +235,23 @@ var olixAdminInterface = {
         setTimeout(function() {
             if ($('.alert').hasClass('alert-dismissable') )
                 $('.alert').slideUp('slow');
-        }, 3000);
+        }, 5000);
+
+    },
+
+
+    /**
+     * Lors d'une Datatable, affiche le modal de confirmation d'une suppression d'un élément
+     * 
+     * @param Object obj Objet du lien
+     */
+    confirmDelete: function (obj)
+    {
+        $('#modalDelete form').attr('action', $(obj).attr('href'));
+        $('#modalDelete').modal('show');
+        return false;
     }
+
 };
 
 
