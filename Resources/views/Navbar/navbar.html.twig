@@ -40,7 +40,7 @@
     </button>
     {% if navbar.security is defined %}
         <button type="button" class="navbar-toggle avatar" data-toggle="collapse" data-target="#olix-security">
-            <img class="img-rounded avatar" src="{{ asset('bundles/olixsecurity/avatar/' ~ app.user.avatar) }}">
+            <img class="img-rounded avatar" src="{{ asset(app.user.avatar) }}">
         </button>
     {% endif %}
 {% endblock olix_admin_navbar_toggle_sidebar %}
