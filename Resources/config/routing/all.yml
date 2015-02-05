@@ -1,0 +1,5 @@
+###
+# Route pour la sécurité
+##
+olix_admin_security:
+    resource: "@OlixSecurityBundle/Resources/config/routing.yml"
