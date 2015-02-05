@@ -410,10 +410,10 @@ body {
 .olix-portlet-border > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
     border-bottom: 0;
 }
-.olix-portlet-body > hr {
+.olix-portlet-body hr {
     border-color: #ddd;
 }
-.olix-portlet-border .olix-portlet-body > hr {
+.olix-portlet-border .olix-portlet-body hr {
     margin-right: -15px;
     margin-left: -15px;
 }
