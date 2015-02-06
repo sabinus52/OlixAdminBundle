@@ -22,11 +22,15 @@
         "components/bootstrap": "3.2.*",
         "components/font-awesome": "*",
         "components/jquery-cookie": "1.4.*",
-        "components/jqueryui": "1.11.*"
+        "olix/security-bundle": "dev-master",
+        "friendsofsymfony/jsrouting-bundle": "@stable",
+        "olix/datatables-bootstrap-bundle": "dev-master",
+        "olix/formsext-bootstrap-bundle": "dev-master",
+        "components/flag-icon-css": "*"
     },
     "autoload" : {
         "psr-4" : {
-            "Olix\\AdminBundle" : ""
+            "Olix\\AdminBundle\\" : ""
         }
     }
 }
