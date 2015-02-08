@@ -3,5 +3,4 @@
 ##
 olix_admin_test:
     resource: "@OlixAdminBundle/Controller/TestController.php"
-    prefix:   /admin
     type:     annotation

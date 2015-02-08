@@ -3,3 +3,9 @@
 ##
 olix_admin_security:
     resource: "@OlixSecurityBundle/Resources/config/routing.yml"
+
+###
+# JS routing
+##
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
