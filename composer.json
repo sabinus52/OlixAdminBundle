@@ -21,6 +21,7 @@
         "robloach/component-installer": "~0.0",
         "components/bootstrap": "3.2.*",
         "components/font-awesome": "*",
+        "components/jqueryui": "1.11.*",
         "components/jquery-cookie": "1.4.*",
         "olix/security-bundle": "dev-master",
         "friendsofsymfony/jsrouting-bundle": "@stable",
