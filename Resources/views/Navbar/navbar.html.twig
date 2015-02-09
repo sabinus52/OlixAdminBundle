@@ -26,7 +26,7 @@
 
 {% block olix_admin_navbar_desc %}
     {% if description is defined %}
-    <p class="navbar-text hidden-xs hidden-sm">{{ description }}</p>
+    <p class="navbar-text hidden-xs hidden-sm">{{ description|raw }}</p>
     {% endif %}
 {% endblock olix_admin_navbar_desc %}
 
