@@ -35,6 +35,12 @@ class AdminFactory
     protected $description = null;
 
     /**
+     * Thème de l'interface : chemin du css
+     * @var string
+     */
+    protected $theme = null;
+
+    /**
      * @var \Olix\AdminBundle\Factory\Navbar
      */
     protected $navbar = null;
@@ -112,6 +118,7 @@ class AdminFactory
             'brand' => $this->brand,
             'logo' => $this->logo,
             'description' => $this->description,
+            'theme' => $this->theme,
             'navbar' => $this->navbar,
             'sidebar' => $this->sidebar,
             'menuactive' => $this->menuActiv,
@@ -128,6 +135,9 @@ class AdminFactory
      */
     public function build(ContainerInterface $container, $menuActive = null)
     {
+        // Ajout d'un thème
+        $this->theme = $container->getParameter('olix_admin.theme');
+        
         // Menus supplémentaires
         if ($container->has('olix_security.sidebar')) {
             $container->get('olix_security.sidebar')->build($this->sidebar);

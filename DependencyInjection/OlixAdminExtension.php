@@ -26,5 +26,6 @@ class OlixAdminExtension extends Extension
         $loader->load('services.yml');
         
         $container->setParameter('olix_admin.config_class', $config['config_class']);
+        $container->setParameter('olix_admin.theme', $config['theme']);
     }
 }

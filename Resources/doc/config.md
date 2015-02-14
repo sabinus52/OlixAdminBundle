@@ -9,7 +9,13 @@ Créer la classe avec le nom désiré correspondant
 
 olix_admin:
     config_class: \My\AdminBundle\Config\MyClassConfig
+    theme: bundles/myadmin/css/theme.css
 ```
+
+### Paramètres :
+
+- `config_class` : Classe contenant la configuration de l'Admin (voir l'exemple ci-dssous)
+- `theme` : Emplacement du fichier CSS contenant thème personnalisable de l'admin
 
 
 ## Exemple

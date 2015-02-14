@@ -26,6 +26,7 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->scalarNode('config_class')->cannotBeEmpty()->defaultValue('\Olix\AdminBundle\Config\AdminConfig')->end()
+                ->scalarNode('theme')->defaultNull()->end()
             ->end();
 
         return $treeBuilder;
