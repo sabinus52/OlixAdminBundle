@@ -435,6 +435,15 @@ body {
     margin-bottom: 10px;
     border-radius: 4px;
 }
+.olix-portlet-filter {
+    padding: 10px;
+}
+.olix-portlet-border > .olix-portlet-filter {
+    border-bottom: 1px solid #ddd;
+}
+.olix-portlet-filter > div {
+    padding: 5px;
+}
 
 
 /**
