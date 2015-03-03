@@ -2,13 +2,14 @@
 
 namespace Olix\AdminBundle\Config;
 
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Olix\AdminBundle\Factory\AdminFactory;
 
 
 class AdminConfig implements ConfigInterface
 {
 
-    public function create(AdminFactory $admin)
+    public function create(ContainerInterface $container, AdminFactory $admin)
     {
         $admin->setBrand('OlixAdminTest')
               ->setLogo('bundles/olixadmin/images/avatar.png')

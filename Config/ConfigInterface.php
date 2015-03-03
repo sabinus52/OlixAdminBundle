@@ -10,6 +10,7 @@
 
 namespace Olix\AdminBundle\Config;
 
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Olix\AdminBundle\Factory\AdminFactory;
 
 
@@ -21,6 +22,6 @@ interface ConfigInterface
      * 
      * @param AdminFactory $factory
      */
-    public function create(AdminFactory $factory);
+    public function create(ContainerInterface $container, AdminFactory $factory);
 
 }
