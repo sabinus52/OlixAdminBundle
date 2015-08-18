@@ -47,11 +47,11 @@
 
 
 {% block olix_admin_navbar_items %}
-    <div class="navbar-collapse  collapse">
+    <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
         {% for item in navbar %}
             {% if item.name != 'security' %}
-                {{ block('olix_admin_navbar_item_' ~ item.name) }}
+                {% include item.twig with item %}
             {% endif %}
         {% endfor %}
         </ul>

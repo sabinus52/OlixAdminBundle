@@ -56,6 +56,16 @@ class AdminFactory
     protected $menuActiv = null;
 
 
+
+    /**
+     * Constructeur
+     */
+    public function __construct()
+    {
+        $this->navbar = new Navbar();
+    }
+
+
     /**
      * Affecte la marque de l'admin
      * 
@@ -91,6 +101,19 @@ class AdminFactory
     public function setDescription($desc)
     {
         $this->description = $desc;
+        return $this;
+    }
+
+
+    /**
+     * Ajout d'un élément dans la barre de navigation
+     * 
+     * @param string $include : Fichier twig d'inclusion du template
+     * @return \Olix\AdminBundle\Factory\AdminFactory
+     */
+    public function addNavbarItem($name, $include, $options = array())
+    {
+        $this->navbar->addItem($name, $include, $options);
         return $this;
     }
 
@@ -152,9 +175,8 @@ class AdminFactory
         }
         
         // Création de la Navbar avec l'ajout auto du menu de l'utilisateur
-        $this->navbar = new Navbar();
         if (class_exists('\Olix\SecurityBundle\OlixSecurityBundle')) {
-            $this->navbar->addItem(Navbar::ITEM_USER_PROFILE);
+            $this->navbar->addItem(Navbar::ITEM_USER_PROFILE, null);
         }
     }
 

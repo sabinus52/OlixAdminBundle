@@ -40,13 +40,14 @@ class Navbar implements NavbarInterface
 
     /**
      * @param string $name
+     * @param string $twig
      * @param array $options
      * @return \Olix\AdminBundle\Factory\Navbar
      */
-    public function addItem($name, array $options = array())
+    public function addItem($name, $twig, array $options = array())
     {
         $this->items[$name] = array_merge(
-            array('name' => $name),
+            array('name' => $name, 'twig' => $twig),
             $options
         );
         return $this;

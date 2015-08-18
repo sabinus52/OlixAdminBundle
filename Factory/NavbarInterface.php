@@ -18,10 +18,11 @@ interface NavbarInterface extends \ArrayAccess, \Countable, \IteratorAggregate
      * Ajoute un nouvel élément
      *
      * @param string $name    : Nom de l'élément
+     * @param string $twig    : Fichier d'include twig
      * @param array  $options : Ses options
      * @return \Olix\AdminBundle\Factory\Navbar
      */
-    public function addItem($name, array $options = array());
+    public function addItem($name, $twig, array $options = array());
 
 
     /**

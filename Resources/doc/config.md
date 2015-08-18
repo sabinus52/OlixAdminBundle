@@ -92,6 +92,8 @@ class MyClassConfig implements ConfigInterface
 
 `setDescription(string)` : Description de votre application
 
+`addNavbarItem(string, string, array)` : Ajoute un élément dans la barre de navigation
+
 `createSidebar()` : Retourne l'objet de la Sidebar
 
 
@@ -105,3 +107,44 @@ Liste des options disponibles :
 - `route` *(string)* : Identifiant de la route
 - `routeParams` *(array)* : Tableau de paramètre pour la route
 - `display` *(boolean)* : Si affichage ou pas
+
+
+## Barre de navigation
+
+Ajout d'un élément personnalisé dans la barre de navigation
+
+Mettre la fonction `addNavbarItem` dans sa classe de configuration de l'admin
+
+``` php
+
+class MyClassConfig implements ConfigInterface
+{
+
+    public function create(AdminFactory $admin)
+    {
+        $admin->setBrand('DemoAdmin')
+              ->setLogo('bundles/myadmin/images/logo.png')
+              ->setDescription('Démo d\'un back office')
+              ->addNavbarItem('test', 'OtopDemoBundle::navbar.html.twig', array('placeholder' => 'Recherche'));
+              ;
+        
+        ...
+    }
+
+}
+```
+
+Puis créer le fichier template twig correspondant
+
+``` html
+<!-- /OtopDemoBundle/Ressources/views/navbar.html.twig -->
+
+<li>
+    <form class="navbar-form" role="search">
+        <input type="text" class="form-control" placeholder="{{ item.placeholder }}">
+    </form>
+</li>
+
+```
+
+
