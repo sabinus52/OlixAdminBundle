@@ -165,6 +165,9 @@ class AdminFactory
         if ($container->has('olix_security.sidebar')) {
             $container->get('olix_security.sidebar')->build($this->sidebar);
         }
+        if ($container->has('olix_server.sidebar')) {
+            $container->get('olix_server.sidebar')->build($this->sidebar);
+        }
         
         // Récupère l'item du menu actif
         if ($menuActive !== null) {
