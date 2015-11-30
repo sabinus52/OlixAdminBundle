@@ -8,6 +8,15 @@ col-sm-3
 col-sm-9
 {%- endblock form_group_class %}
 
+{% block form_widget_simple %}
+{% spaceless %}
+    {{ parent() }}
+    {% if help is defined %}
+        <span class="help-block">{{ help }}</span>
+    {% endif %}
+{% endspaceless %}
+{% endblock %}
+
 {% block checkbox_radio_row -%}
 {% spaceless %}
     <div class="form-group{% if not valid %} has-error{% endif %}">

@@ -9,3 +9,8 @@ services:
         class: Olix\AdminBundle\Twig\Extension\AdminExtension
         tags:
             - { name: twig.extension }
+# Extension des formulaires
+    olix.admin.form.extension.help:
+        class: Olix\AdminBundle\Form\HelpFormExtension
+        tags:
+            - { name: form.type_extension, alias: form }
