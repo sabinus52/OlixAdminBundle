@@ -494,6 +494,14 @@ body {
 
 
 /**
+ * Formulaires
+ */
+label.required:after {
+    content: " *";
+}
+
+
+/**
  * Boutons
  */
 .btn-dark {
