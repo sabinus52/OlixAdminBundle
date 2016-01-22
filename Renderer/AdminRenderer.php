@@ -16,7 +16,7 @@ use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Olix\AdminBundle\Factory\AdminFactory;
-use Olix\AdminBundle\Factory\SidebarItem;
+use Olix\AdminBundle\Factory\BreadcrumbItem;
 
 
 class AdminRenderer extends ContainerAware
@@ -58,6 +58,20 @@ class AdminRenderer extends ContainerAware
         $this->config = new $classConfig();
         $this->factory = new AdminFactory();
         $this->config->create($this->container, $this->factory);
+    }
+
+
+    /**
+     * Ajoute un nouvel élément au fil d'ariane
+     * 
+     * @param array $item
+     * @return \Olix\AdminBundle\Renderer\AdminRenderer
+     */
+    public function addItemInBreadcrumb(array $item)
+    {
+        $item = new BreadcrumbItem('bc'.rand(), $item);
+        $this->factory->addItemBreadcrumb($item);
+        return $this;
     }
 
 

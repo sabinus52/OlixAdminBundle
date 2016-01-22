@@ -55,6 +55,12 @@ class AdminFactory
      */
     protected $menuActiv = null;
 
+    /**
+     * Fil d'araine additionnel
+     * @var array
+     */
+    protected $breadcrumb = array();
+
 
 
     /**
@@ -102,6 +108,12 @@ class AdminFactory
     {
         $this->description = $desc;
         return $this;
+    }
+
+    
+    public function addItemBreadcrumb($item)
+    {
+        $this->breadcrumb[] = $item;
     }
 
 
@@ -193,6 +205,9 @@ class AdminFactory
     protected function buildBreadcrumb(SidebarItem $item)
     {
         $breadcrumb = array();
+        foreach (array_reverse($this->breadcrumb) as $bc) {
+            $breadcrumb[] = $bc;
+        }
         do {
             $breadcrumb[] = $item;
         } while ($item = $item->getParent());
