@@ -606,3 +606,82 @@ label.required:after {
         -ms-transition:all .5s ease-in-out;
             transition:all .5s ease-in-out;
 }
+
+
+/**
+ * Panels
+ */
+ .panel-blue {
+  border-color: #337ab7;
+}
+.panel-blue > .panel-heading {
+  border-color: #337ab7;
+  color: white;
+  background-color: #337ab7;
+}
+.panel-blue > a {
+  color: #337ab7;
+}
+.panel-blue > a:hover {
+  color: #23527c;
+}
+.panel-red {
+  border-color: #d9534f;
+}
+.panel-red > .panel-heading {
+  border-color: #d9534f;
+  color: white;
+  background-color: #d9534f;
+}
+.panel-red > a {
+  color: #d9534f;
+}
+.panel-red > a:hover {
+  color: #b52b27;
+}
+.panel-yellow {
+  border-color: #f0ad4e;
+}
+.panel-yellow > .panel-heading {
+  border-color: #f0ad4e;
+  color: white;
+  background-color: #f0ad4e;
+}
+.panel-yellow > a {
+  color: #f0ad4e;
+}
+.panel-yellow > a:hover {
+  color: #df8a13;
+}
+.panel-green {
+  border-color: #5cb85c;
+}
+.panel-green > .panel-heading {
+  border-color: #5cb85c;
+  color: white;
+  background-color: #5cb85c;
+}
+.panel-green > a {
+  color: #5cb85c;
+}
+.panel-green > a:hover {
+  color: #3d8b3d;
+}
+.panel-dark {
+  border-color: #6f6f6f;
+}
+.panel-dark > .panel-heading {
+  border-color: #6f6f6f;
+  color: white;
+  background-color: #6f6f6f;
+}
+.panel-dark > a {
+  color: #6f6f6f;
+}
+.panel-dark > a:hover {
+  color: #5a5a5a;
+}
+.huge {
+  font-size: 40px;
+  font-weight: bold;
+}
