@@ -19,7 +19,13 @@ class AdminPass implements CompilerPassInterface
 
     public function process(ContainerBuilder $container)
     {
-        $container->setParameter('twig.form.resources', array('OlixAdminBundle:Form:bootstrap3_horizontal_layout.html.twig'));
+        $resTwig = array();
+        foreach ($container->getParameter('twig.form.resources') as $res) {
+            if ($res == 'form_div_layout.html.twig') continue;
+            $resTwig[] = $res;
+        }
+        $resTwig[] = 'OlixAdminBundle:Form:bootstrap3_horizontal_layout.html.twig';
+        $container->setParameter('twig.form.resources', $resTwig);
     }
 
 }
